@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Avatar, Button, Stack } from '@mui/material';
+import { AppBar, Toolbar, Button, Stack } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
