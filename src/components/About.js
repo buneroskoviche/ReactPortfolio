@@ -1,12 +1,13 @@
 import React from "react";
-import { Avatar, Container } from '@mui/material';
+import { Avatar } from '@mui/material';
 
 const About = () => {
     return (
-        <Container>
+        <React.Fragment>
             <Avatar 
                 alt="Daniel Kinser"
                 src="/static/images/avatar/avatar.jpg"
+                sx={{ width: 100, height: 100}}
             />
             <p>
                 Hello! My name is Daniel Kinser.
@@ -26,7 +27,7 @@ const About = () => {
                 It seemed that coding would allow me to be creative in a way that played to my innate strengths.
                 Coding could be the step up that I have been looking for!
             </p>
-        </Container>
+        </React.Fragment>
     )
 }
 

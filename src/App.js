@@ -1,15 +1,19 @@
 import React from 'react';
-import { Toolbar } from '@mui/material';
+import { Toolbar, Container } from '@mui/material';
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import Work from './components/Work';
 
 function App() {
   return (
     <React.Fragment>
       <Navbar/>
       <Toolbar />
-      <About />
+      <Container>
+        <About />
+        <Work/>
+      </Container>
     </React.Fragment>
   );
 }
