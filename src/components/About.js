@@ -3,7 +3,7 @@ import { Avatar } from '@mui/material';
 
 const About = () => {
     return (
-        <React.Fragment>
+        <div>
             <Avatar 
                 alt="Daniel Kinser"
                 src="/static/images/avatar/avatar.jpg"
@@ -27,7 +27,7 @@ const About = () => {
                 It seemed that coding would allow me to be creative in a way that played to my innate strengths.
                 Coding could be the step up that I have been looking for!
             </p>
-        </React.Fragment>
+        </div>
     )
 }
 
