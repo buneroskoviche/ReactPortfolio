@@ -18,13 +18,22 @@ const Navbar = () => {
         <AppBar position="fixed" >
             <Toolbar className={styles.centered}>
                 <Stack direction="row" spacing={24}>
-                    <Button variant="contained">
+                    <Button 
+                        variant="contained"
+                        onClick={() => window.open('https://github.com/buneroskoviche', '_blank')}
+                    >
                         GitHub
                     </Button>
-                    <Button variant="contained">
+                    <Button 
+                        variant="contained"
+                        onClick={() => window.open('https://www.linkedin.com/in/danielkinser/', '_blank')}
+                    >
                         LinkedIn
                     </Button>
-                    <Button variant="contained">
+                    <Button 
+                        variant="contained"
+                        onClick={() => window.open('/static/DanielKinser_Resume2021.pdf', '_blank')}
+                    >
                         Resume
                     </Button>
                 </Stack>
