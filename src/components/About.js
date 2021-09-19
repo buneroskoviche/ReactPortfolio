@@ -3,7 +3,7 @@ import { Avatar, Container } from '@mui/material';
 
 const About = () => {
     return (
-        <Container sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "2%" }}>
+        <Container sx={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "2% 0" }}>
             <Avatar
                 alt="Daniel Kinser"
                 src="/static/images/avatar/avatar.jpg"

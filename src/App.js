@@ -14,6 +14,7 @@ function App() {
         <About />
         <Divider/>
         <Work/>
+        <Divider/>
       </Container>
     </React.Fragment>
   );
