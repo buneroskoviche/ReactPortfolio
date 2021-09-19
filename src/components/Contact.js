@@ -75,6 +75,9 @@ const Contact = () => {
             && nameErrorState === false && nameInput
             && emailErrorState === false && email) {
             console.log(nameInput, email, message);
+            setMessage('');
+            setNameInput('');
+            setEmail('');
             return;
         }
 
