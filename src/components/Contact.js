@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container, TextField, Button, Grid } from '@mui/material';
+import { TextField, Button, Grid } from '@mui/material';
 import { validateEmail } from "../utils/helpers"; 
 
 const Contact = () => {

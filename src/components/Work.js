@@ -45,7 +45,7 @@ const Work = () => {
             {
                 works.map((work, index) => {
                     return (
-                        <WorkCard work={work} />
+                        <WorkCard key={index} work={work} />
                     )
                 })
             }
