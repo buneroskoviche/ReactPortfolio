@@ -55,7 +55,7 @@ const works = [
 
 const Work = () => {
     return (
-        <div>
+        <div id='work'>
             <h1>Works</h1>
             <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
             {

@@ -88,7 +88,7 @@ const Contact = () => {
     }
 
     return (
-        <div style={{ marginTop: '2%'}}>
+        <div id='contact' style={{ marginTop: '2%'}}>
             <h1>Contact Me</h1>
                 <Grid container spacing={2}>
                     <Grid item xs={6}>

@@ -10,13 +10,14 @@ const Resume = () => {
         "Node",
         "SQL",
         "MongoDB",
+        "Express",
         "Bootstrap",
         "Material UI",
         "Handlebars"
     ];
 
     return (
-        <div>
+        <div id="resume">
             <h1>Resume</h1>
             <Container>
                 <Grid container>
