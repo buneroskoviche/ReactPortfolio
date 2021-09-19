@@ -45,7 +45,7 @@ const Navbar = () => {
                             {
                                 navBtns.map(({href, title}, index) => {
                                     return (
-                                        <a href={href} style={{textDecoration: 'none', margin: '2% 0'}}>
+                                        <a key={index} href={href} style={{textDecoration: 'none', margin: '2% 0'}}>
                                             <Button variant="contained">{title}</Button>
                                         </a>
                                     )
