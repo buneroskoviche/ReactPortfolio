@@ -1,9 +1,10 @@
 import React from "react";
-import { useState, setState } from "react";
+import { useState } from "react";
 import { Container, TextField, Button } from '@mui/material';
 import { validateEmail } from "../utils/helpers"; 
 
 const Contact = () => {
+    // set states for all form fields
     const [message, setMessage] = useState('');
     const [messageErrorMessage, setMessageErrorMessage] = useState('');
     const [messageErrorState, setMessageErrorState] = useState(false);
@@ -16,66 +17,69 @@ const Contact = () => {
     const [nameErrorMessage, setNameErrorMessage] = useState('');
     const [nameErrorState, setNameErrorState] = useState(false);
 
-    const [activeBtn, setActiveBtn] = useState(false);
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
 
         // determine the input selected
-        if (name === 'message') {
-            setMessage(value);
-            // Check if the message field is empty
-            if(!value) {
-                // if so, change to error state and display a message
-                setMessageErrorMessage('This field is required');
-                setMessageErrorState(true);
-                return;
-            }
-            // if not, remove the error state
-            setMessageErrorMessage('');
-            setMessageErrorState(false);
-
-        } else if (name === 'nameInput') {
-            setNameInput(value);
-            // Check if the name field is empty too
-            if(!value) {
-                setNameErrorMessage('This field is required');
-                setNameErrorState(true);
-                return;
-            }
-            setNameErrorMessage('');
-            setNameErrorState(false);
-
-        } else {
-            setEmail(value);
-            // Check if the email field is empty
-            if(!value) {
-                setEmailErrorMessage('This field is required');
-                setEmailErrorState(true);
-                return;
-            }
-            // Check for a valid email address
-            if(!validateEmail(value)) {
-                setEmailErrorMessage('Please enter a valid email address');
-                setEmailErrorState(true);
-                return;
-            }
-            setEmailErrorMessage('');
-            setEmailErrorState(false);
+        switch(name) {
+            case 'message':
+                setMessage(value);
+                // Check if the message field is empty
+                if(!value) {
+                    // if so, change to error state and display a message
+                    setMessageErrorMessage('This field is required');
+                    setMessageErrorState(true);
+                } else {
+                    // if not, remove the error state
+                    setMessageErrorMessage('');
+                    setMessageErrorState(false);
+                }
+                break;
+            case 'nameInput':
+                setNameInput(value);
+                // Check if the name field is empty too
+                if(!value) {
+                    setNameErrorMessage('This field is required');
+                    setNameErrorState(true);
+                } else {
+                    setNameErrorMessage('');
+                    setNameErrorState(false);
+                }
+                break;
+            default:
+                setEmail(value);
+                // Check if the email field is empty
+                if(!value) {
+                    setEmailErrorMessage('This field is required');
+                    setEmailErrorState(true);
+                } else
+                // then check for a valid email address
+                if(!validateEmail(value)) {
+                    setEmailErrorMessage('Enter a valid email address');
+                    setEmailErrorState(true);
+                } else {
+                    setEmailErrorMessage('');
+                    setEmailErrorState(false);
+                }
+                break;
         }
-        // Check to see if all fields are filled and not errored
-        if(messageErrorState === false && message
-            && nameErrorState === false && name
-            && emailErrorState === false && email) {
-                // if so, activate the send button
-                return setActiveBtn(true);
-        }
-        return setActiveBtn(false);
+
+        return;
     }
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(nameInput, email, message);
+        
+        // Check to see if all fields are filled and not errored
+        if(messageErrorState === false && message
+            && nameErrorState === false && nameInput
+            && emailErrorState === false && email) {
+            console.log(nameInput, email, message);
+            return;
+        }
+
+        alert('Please validate all the fields!');
+        return;
     }
 
     return (
@@ -114,7 +118,6 @@ const Contact = () => {
                     <Button 
                         variant="contained" 
                         onClick={handleFormSubmit}
-                        disabled={true}
                     >
                         Send
                     </Button>
