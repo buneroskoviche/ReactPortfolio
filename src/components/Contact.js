@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container, TextField, Button } from '@mui/material';
+import { Container, TextField, Button, Grid } from '@mui/material';
 import { validateEmail } from "../utils/helpers"; 
 
 const Contact = () => {
@@ -88,44 +88,54 @@ const Contact = () => {
     return (
         <div sx={{ margin: '2% 0'}}>
             <h1>Send me a message</h1>
-            <Container>
-                <form>
-                    <TextField
-                        value={nameInput}
-                        onChange={handleInputChange}
-                        name="nameInput"
-                        label="Name" 
-                        variant="outlined"
-                        error={nameErrorState}
-                        helperText={nameErrorMessage}
-                    />
-                    <TextField 
-                        value={email}
-                        onChange={handleInputChange}
-                        name="email"
-                        label="Email" 
-                        variant="outlined"
-                        error={emailErrorState}
-                        helperText={emailErrorMessage}
-                    />
-                    <TextField 
-                        value={message}
-                        onChange={handleInputChange}
-                        name="message"
-                        label="Message" 
-                        variant="outlined"
-                        error={messageErrorState}
-                        helperText={messageErrorMessage}
-
-                    />
-                    <Button 
-                        variant="contained" 
-                        onClick={handleFormSubmit}
-                    >
-                        Send
-                    </Button>
-                </form>
-            </Container>
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <TextField
+                            fullWidth
+                            value={nameInput}
+                            onChange={handleInputChange}
+                            name="nameInput"
+                            label="Name" 
+                            variant="outlined"
+                            error={nameErrorState}
+                            helperText={nameErrorMessage}
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField 
+                            fullWidth
+                            value={email}
+                            onChange={handleInputChange}
+                            name="email"
+                            label="Email" 
+                            variant="outlined"
+                            error={emailErrorState}
+                            helperText={emailErrorMessage}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField 
+                            fullWidth
+                            value={message}
+                            onChange={handleInputChange}
+                            name="message"
+                            label="Message" 
+                            variant="outlined"
+                            error={messageErrorState}
+                            helperText={messageErrorMessage}
+                            multiline
+                            rows={4}
+                        />
+                    </Grid>
+                    <Grid item >
+                        <Button 
+                            variant="contained" 
+                            onClick={handleFormSubmit}
+                        >
+                            Send
+                        </Button>
+                    </Grid>
+                </Grid>
         </div>
     )
 }
