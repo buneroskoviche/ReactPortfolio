@@ -28,6 +28,22 @@ const works = [
         tutorial: null,
     },
     {
+        title: "Tech Blog",
+        description: "It is a browser based application that allows users to hold discussions and ask questions about technology. To use the app, users will need to sign up with a username, email and password. Users can comment on posts by opening the threads. Users can also create and track their own posts through the dashboard",
+        img: "/static/images/work/TechBlog.PNG",
+        github: "https://github.com/buneroskoviche/TechBlog",
+        activeLink: "https://tech-blog-dk.herokuapp.com/",
+        tutorial: null,
+    },
+    {
+        title: "Employee Tracker",
+        description: "A command line based application that allows the user to interact with an internal database of related employees, roles, and departments.",
+        img: "/static/images/work/EmployeeTracker.PNG",
+        github: "https://github.com/buneroskoviche/EmployeeTracker",
+        activeLink: null,
+        tutorial: "https://www.youtube.com/watch?v=EXwhTC02JQo",
+    },
+    {
         title: "Team Profile Generator",
         description: "A text based application that dynamically generates a web page. The page allows quick access to team member data, such as email and Github profile links.",
         img: "/static/images/work/TeamProfGen.PNG",
