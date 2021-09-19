@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Work from './components/Work';
 import Contact from './components/Contact';
+import Resume from './components/Resume';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Work/>
         <Divider/>
         <Contact/>
+        <Divider/>
+        <Resume/>
       </Container>
     </React.Fragment>
   );

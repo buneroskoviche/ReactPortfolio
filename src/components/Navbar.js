@@ -34,7 +34,7 @@ const Navbar = () => {
                         </Button>
                         <Button 
                             variant="contained"
-                            onClick={() => window.open('/static/DanielKinser_Resume2021.pdf', '_blank')}
+                            
                         >
                             Resume
                         </Button>
