@@ -7,7 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const WorkCard = ({ work }) => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345, marginBottom: "2%" }}>
                           <CardMedia
                             component="img"
                             height="140"

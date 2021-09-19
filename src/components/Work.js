@@ -41,7 +41,7 @@ const Work = () => {
     return (
         <div>
             <h1>Here's some work</h1>
-            <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+            <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
             {
                 works.map((work, index) => {
                     return (

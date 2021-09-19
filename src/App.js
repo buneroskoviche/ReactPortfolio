@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toolbar, Container } from '@mui/material';
+import { Toolbar, Container, Divider } from '@mui/material';
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -12,6 +12,7 @@ function App() {
       <Toolbar />
       <Container>
         <About />
+        <Divider/>
         <Work/>
       </Container>
     </React.Fragment>
