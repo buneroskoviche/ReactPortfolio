@@ -23,7 +23,7 @@ function App() {
         <Divider/>
         <Resume/>
         <ScrollTop>
-          <Fab size="small" aria-label="scroll back to top">
+          <Fab color='primary' size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>
