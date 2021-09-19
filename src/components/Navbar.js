@@ -32,12 +32,6 @@ const Navbar = () => {
                         >
                             LinkedIn
                         </Button>
-                        <Button 
-                            variant="contained"
-                            
-                        >
-                            Resume
-                        </Button>
                     </Stack>
                 </Toolbar>
             </AppBar>

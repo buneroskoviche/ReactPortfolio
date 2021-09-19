@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { TextField, Button, Grid } from '@mui/material';
+import { TextField, Button, Grid, List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
 import { validateEmail } from "../utils/helpers"; 
+import PhoneIcon from '@mui/icons-material/PhoneEnabled';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
     // set states for all form fields
@@ -86,8 +88,8 @@ const Contact = () => {
     }
 
     return (
-        <div sx={{ margin: '2% 0'}}>
-            <h1>Send me a message</h1>
+        <div style={{ marginTop: '2%'}}>
+            <h1>Contact Me</h1>
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
                         <TextField
@@ -127,13 +129,31 @@ const Contact = () => {
                             rows={4}
                         />
                     </Grid>
-                    <Grid item >
+                    <Grid item  xs={6}>
                         <Button 
                             variant="contained" 
                             onClick={handleFormSubmit}
                         >
                             Send
                         </Button>
+                    </Grid>
+                    <Grid item>
+                        <List sx={{display: 'flex'}}>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <PhoneIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="209-640-2803"/>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemButton onClick={() => window.location='mailto:dkcoder93@gmail.com'}>
+                                    <ListItemIcon>
+                                        <EmailIcon/>
+                                    </ListItemIcon>
+                                <ListItemText primary="dkcoder93@gmail.com"/>
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
                     </Grid>
                 </Grid>
         </div>
