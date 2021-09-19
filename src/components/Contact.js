@@ -24,16 +24,20 @@ const Contact = () => {
         // determine the input selected
         if (name === 'message') {
             setMessage(value);
+            // Check if the message field is empty
             if(!value) {
+                // if so, change to error state and display a message
                 setMessageErrorMessage('This field is required');
                 setMessageErrorState(true);
                 return;
             }
+            // if not, remove the error state
             setMessageErrorMessage('');
             setMessageErrorState(false);
 
         } else if (name === 'nameInput') {
             setNameInput(value);
+            // Check if the name field is empty too
             if(!value) {
                 setNameErrorMessage('This field is required');
                 setNameErrorState(true);
@@ -44,11 +48,13 @@ const Contact = () => {
 
         } else {
             setEmail(value);
+            // Check if the email field is empty
             if(!value) {
                 setEmailErrorMessage('This field is required');
                 setEmailErrorState(true);
                 return;
             }
+            // Check for a valid email address
             if(!validateEmail(value)) {
                 setEmailErrorMessage('Please enter a valid email address');
                 setEmailErrorState(true);
@@ -57,13 +63,14 @@ const Contact = () => {
             setEmailErrorMessage('');
             setEmailErrorState(false);
         }
-        
+        // Check to see if all fields are filled and not errored
         if(messageErrorState === false && message
             && nameErrorState === false && name
             && emailErrorState === false && email) {
-                setActiveBtn(true);
+                // if so, activate the send button
+                return setActiveBtn(true);
         }
-        return;
+        return setActiveBtn(false);
     }
 
     const handleFormSubmit = (event) => {
