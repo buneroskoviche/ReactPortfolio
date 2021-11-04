@@ -6,84 +6,74 @@ import PhoneIcon from '@mui/icons-material/PhoneEnabled';
 import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
-    // set states for all form fields
-    const [message, setMessage] = useState('');
-    const [messageErrorMessage, setMessageErrorMessage] = useState('');
-    const [messageErrorState, setMessageErrorState] = useState(false);
+    const defaultFormState = {
+        name: '',
+        email: '',
+        message: '',
+        inError: true,
+        complete: false,
+    };
+    const defaultErrorState = {
+        nameError: false,
+        emailError: false,
+        messageError: false,
+        nameErrorMessage: '',
+        emailErrorMessage:  '',
+        messageErrorMessage:  '',
+    };
 
-    const [email, setEmail] = useState('');
-    const [emailErrorMessage, setEmailErrorMessage] = useState('');
-    const [emailErrorState, setEmailErrorState] = useState(false);
-    
-    const [nameInput, setNameInput] = useState('');
-    const [nameErrorMessage, setNameErrorMessage] = useState('');
-    const [nameErrorState, setNameErrorState] = useState(false);
+    const [formState, setFormState] = useState(defaultFormState);
+    const [errorState, setErrorState] = useState(defaultErrorState);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        let error = false;
+        let errorMsg = '';
+        let inError = false;
+        let isComplete = false;
 
-        // determine the input selected
-        switch(name) {
-            case 'message':
-                setMessage(value);
-                // Check if the message field is empty
-                if(!value) {
-                    // if so, change to error state and display a message
-                    setMessageErrorMessage('This field is required');
-                    setMessageErrorState(true);
-                } else {
-                    // if not, remove the error state
-                    setMessageErrorMessage('');
-                    setMessageErrorState(false);
-                }
-                break;
-            case 'nameInput':
-                setNameInput(value);
-                // Check if the name field is empty too
-                if(!value) {
-                    setNameErrorMessage('This field is required');
-                    setNameErrorState(true);
-                } else {
-                    setNameErrorMessage('');
-                    setNameErrorState(false);
-                }
-                break;
-            default:
-                setEmail(value);
-                // Check if the email field is empty
-                if(!value) {
-                    setEmailErrorMessage('This field is required');
-                    setEmailErrorState(true);
-                } else
-                // then check for a valid email address
-                if(!validateEmail(value)) {
-                    setEmailErrorMessage('Enter a valid email address');
-                    setEmailErrorState(true);
-                } else {
-                    setEmailErrorMessage('');
-                    setEmailErrorState(false);
-                }
-                break;
+        // Check if the field is empty
+        if(!value) {
+            error = true;
+            errorMsg = 'This field is required.';
+            inError = true;
         }
+        // Check if the email entered is valid
+        if(name === 'email' && !validateEmail(value)) {
+            error = true;
+            errorMsg = 'Please enter a valid email address.';
+            inError = true;
+        }
+        // Check if all fields are filled
+        if(formState.email && formState.name && formState.message) {
+            isComplete = true;
+        }
+        
+        setFormState({
+            ...formState,
+            [name]: value,
+            inError: inError,
+            complete: isComplete,
+        });
+        setErrorState({
+            ...errorState,
+            [name + 'Error']: error,
+            [name + 'ErrorMessage']: errorMsg,
+        });
 
         return;
     }
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        
-        // Check to see if all fields are filled and not errored
-        if(messageErrorState === false && message
-            && nameErrorState === false && nameInput
-            && emailErrorState === false && email) {
-            console.log(nameInput, email, message);
-            setMessage('');
-            setNameInput('');
-            setEmail('');
+        console.log(formState);
+        // Check to see if the form is filled and if there are any errors
+        if(formState.inError || !formState.complete){
+            alert('Please fill and validate all fields!');
+            console.log('Failure...')
             return;
         }
-
-        alert('Please validate all the fields!');
+        console.log('Complete!');
         return;
     }
 
@@ -94,37 +84,37 @@ const Contact = () => {
                     <Grid item xs={6}>
                         <TextField
                             fullWidth
-                            value={nameInput}
+                            value={formState.name}
                             onChange={handleInputChange}
-                            name="nameInput"
+                            name="name"
                             label="Name" 
                             variant="outlined"
-                            error={nameErrorState}
-                            helperText={nameErrorMessage}
+                            error={errorState.nameError}
+                            helperText={errorState.nameErrorMessage}
                         />
                     </Grid>
                     <Grid item xs={6}>
                         <TextField 
                             fullWidth
-                            value={email}
+                            value={formState.email}
                             onChange={handleInputChange}
                             name="email"
                             label="Email" 
                             variant="outlined"
-                            error={emailErrorState}
-                            helperText={emailErrorMessage}
+                            error={errorState.emailError}
+                            helperText={errorState.emailErrorMessage}
                         />
                     </Grid>
                     <Grid item xs={12}>
                         <TextField 
                             fullWidth
-                            value={message}
+                            value={formState.message}
                             onChange={handleInputChange}
                             name="message"
                             label="Message" 
                             variant="outlined"
-                            error={messageErrorState}
-                            helperText={messageErrorMessage}
+                            error={errorState.messageError}
+                            helperText={errorState.messageErrorMessage}
                             multiline
                             rows={4}
                         />
