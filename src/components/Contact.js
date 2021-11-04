@@ -74,6 +74,8 @@ const Contact = () => {
             return;
         }
         console.log('Complete!');
+        setFormState(defaultFormState);
+        setErrorState(defaultErrorState);
         return;
     }
 
