@@ -66,7 +66,6 @@ const Contact = () => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(formState);
         // Check to see if the form is filled and if there are any errors
         if(formState.inError || !formState.complete){
             alert('Please fill and validate all fields!');

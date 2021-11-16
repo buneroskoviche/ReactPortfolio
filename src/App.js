@@ -1,7 +1,9 @@
 import React from 'react';
 import { Toolbar, Container, Divider, Fab } from '@mui/material';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 import About from './components/About';
 import Work from './components/Work';
 import Contact from './components/Contact';
@@ -15,18 +17,30 @@ function App() {
       <Navbar/>
       <Toolbar id='top-anchor' />
       <Container>
-        <About />
-        <Divider/>
-        <Work/>
-        <Divider/>
-        <Contact/>
-        <Divider/>
-        <Resume/>
-        <ScrollTop>
-          <Fab color='primary' size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
+        <BrowserRouter>
+          <Routes>
+
+            <Route path='/' element={<Home/>} />
+
+            {/* <Route exact path='/'>
+              <About />
+              <Divider/>
+              <Work/>
+            </Route> */}
+
+            {/* <Route exact path='/test'>
+              <Divider/>
+              <Contact/>
+              <Divider/>
+              <Resume/>
+              <ScrollTop>
+                <Fab color='primary' size="small" aria-label="scroll back to top">
+                  <KeyboardArrowUpIcon />
+                </Fab>
+              </ScrollTop>
+            </Route> */}
+          </Routes>
+        </BrowserRouter>
       </Container>
     </React.Fragment>
   );
