@@ -4,6 +4,7 @@ import { TextField, Button, Grid, List, ListItem, ListItemText, ListItemIcon, Li
 import { validateEmail } from "../utils/helpers"; 
 import PhoneIcon from '@mui/icons-material/PhoneEnabled';
 import EmailIcon from '@mui/icons-material/Email';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const defaultFormState = {
@@ -72,7 +73,13 @@ const Contact = () => {
             console.log('Failure...')
             return;
         }
-        console.log('Complete!');
+
+        try {
+            emailjs.send(process.env.EMAILJS_SERVICE, process.env.EMAILJS_TEMPLATE, formState, process.env.EMAILJS_KEY);
+        } catch (e) {
+            console.log(e)
+        }
+
         setFormState(defaultFormState);
         setErrorState(defaultErrorState);
         return;
