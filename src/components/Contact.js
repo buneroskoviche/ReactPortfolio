@@ -75,9 +75,16 @@ const Contact = () => {
         }
 
         try {
-            emailjs.send(process.env.EMAILJS_SERVICE, process.env.EMAILJS_TEMPLATE, formState, process.env.EMAILJS_KEY);
+            emailjs.send(
+                process.env.EMAILJS_SERVICE, 
+                process.env.EMAILJS_TEMPLATE, 
+                formState, 
+                process.env.EMAILJS_KEY
+            );
+            alert('Message sent! Thank you for contacting me.')
         } catch (e) {
-            console.log(e)
+            console.log(e);
+            alert('Error sending message... Try again later.');
         }
 
         setFormState(defaultFormState);

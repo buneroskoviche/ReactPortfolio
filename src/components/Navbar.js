@@ -13,19 +13,19 @@ const HideOnScroll = (props) => {
 
 const navBtns = [
     {
-        href: '#about',
+        href: '/about',
         title: 'About Me'
     },
     {
-        href: '#work',
+        href: '/work',
         title: 'Work'
     },
     {
-        href: '#contact',
+        href: '/contact',
         title: 'Contact'
     },
     {
-        href: '#resume',
+        href: '/resume',
         title: 'Resume'
     },
 ]
@@ -53,7 +53,7 @@ const Navbar = () => {
                             }
                             <Button 
                                 variant="contained"
-                                onClick={() => window.open('https://github.com/buneroskoviche', '_blank')}
+                                onClick={() => window.open('https://github.com/dk-code93', '_blank')}
                             >
                                 GitHub
                             </Button>

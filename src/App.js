@@ -24,6 +24,10 @@ function App() {
 
             <Route path='/contact' element={<Contact/>} />
 
+            <Route path='/about' element={<Home/>} />
+
+            <Route path='/work' element={<Work/>} />
+
             {/* <Route exact path='/'>
               <About />
               <Divider/>
