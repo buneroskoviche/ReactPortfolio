@@ -1,5 +1,13 @@
 const works = [
     {
+        "title": "Boardgame Trader",
+        "description": "A web based app that allows users to buy and sell board games. Users can create listings, save to favorited listings for later, and chat with other users",
+        "img": "/static/images/work/BGT.jpg",
+        "github": "https://github.com/Dkallen117/Boardgame-Trader",
+        "activeLink": "https://boardgame-trader.herokuapp.com/",
+        "tutorial": null
+    },
+    {
         "title": "RPG Database",
         "description": "Users can browse others' creations at the homepage, but will need to log in to create their own characters. Users can give their characters their own weapon, armor, and spells which is all saved to a database.",
         "img": "/static/images/work/RPG_DB.jpg",
@@ -46,7 +54,15 @@ const works = [
         "github": "https://github.com/dk-code93/TeamProfileGenerator",
         "activeLink": null,
         "tutorial": "https://www.youtube.com/watch?v=7YroCBRieyw"
-    }
+    },
+    {
+        "title": "Coding Quiz",
+        "description": "A web based quiz game that will track keeps track of highscores.",
+        "img": "/static/images/work/CQG.PNG",
+        "github": "https://github.com/dk-code93/CodingQuizGame",
+        "activeLink": "https://dk-code93.github.io/CodingQuizGame/",
+        "tutorial": null,
+    },
 ];
 
 export default works;
