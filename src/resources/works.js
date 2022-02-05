@@ -2,7 +2,7 @@ const works = [
     {
         "title": "Boardgame Trader",
         "description": "A web based app that allows users to buy and sell board games. Users can create listings, save to favorited listings for later, and chat with other users",
-        "img": "/static/images/work/BGT.jpg",
+        "img": "/static/images/work/BGT.png",
         "github": "https://github.com/Dkallen117/Boardgame-Trader",
         "activeLink": "https://boardgame-trader.herokuapp.com/",
         "tutorial": null
