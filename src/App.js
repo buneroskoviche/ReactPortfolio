@@ -31,23 +31,6 @@ function App() {
 
             <Route path='/projects/:projIndex' element={<Project/>} />
 
-            {/* <Route exact path='/'>
-              <About />
-              <Divider/>
-              <Work/>
-            </Route> */}
-
-            {/* <Route exact path='/test'>
-              <Divider/>
-              <Contact/>
-              <Divider/>
-              <Resume/>
-              <ScrollTop>
-                <Fab color='primary' size="small" aria-label="scroll back to top">
-                  <KeyboardArrowUpIcon />
-                </Fab>
-              </ScrollTop>
-            </Route> */}
           </Routes>
         </BrowserRouter>
       </Container>
