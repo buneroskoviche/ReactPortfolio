@@ -13,6 +13,8 @@ const WorkCard = ({ work }) => {
             height="140"
             image={work.img}
             alt={work.title}
+            onClick={() => window.location.assign(`/projects/${work.index}`)}
+            sx={{ cursor: 'pointer' }}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">

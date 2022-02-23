@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Resume from './components/Resume';
 import ScrollTop from './components/ScrollTop';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Project from './components/Project';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Route path='/about' element={<Home/>} />
 
             <Route path='/work' element={<Work/>} />
+
+            <Route path='/projects/:projIndex' element={<Project/>} />
 
             {/* <Route exact path='/'>
               <About />

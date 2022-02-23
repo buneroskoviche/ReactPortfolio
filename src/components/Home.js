@@ -28,7 +28,7 @@ function Home() {
                 {
                     selectWorks.map((work, index) => {
                         return (
-                            <WorkCard key={index} work={work} />
+                            <WorkCard key={index} work={{...work, index}} />
                         )
                     })
                 }
